@@ -1,12 +1,21 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: radik
- * Date: 9/26/17
- * Time: 12:23 PM
- */
 class Hash
 {
+
+    public static function make($string, $salt = '')
+    {
+        return hash('sha1', $string, $salt);
+    }
+
+    public static function salt($length)
+    {
+        return random_bytes($length);
+    }
+
+    public static function unique()
+    {
+        return self::make(uniqid());
+    }
 
 }
