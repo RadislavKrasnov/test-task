@@ -47,6 +47,16 @@ class Validate
                                 $this->addErrors("{$ruleValue} must be match {$item}");
                             }
                         break;
+                        case 'string':
+                            if (!is_string($value)) {
+                                $this->addErrors("{$item} must be match {$rule}");
+                            }
+                        break;
+                        case 'number':
+                            if (!is_numeric($value)) {
+                                $this->addErrors("{$item} must be match {$rule}");
+                            }
+                        break;
                     }
                 }
             }
